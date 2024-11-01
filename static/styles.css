@@ -1,0 +1,114 @@
+/* Reset and Base Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+}
+
+/* Center the main title */
+h1 {
+    text-align: center;
+    font-size: 2.5em;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+/* Main container for horizontal layout */
+.container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    max-width: 1000px;
+    margin: 20px auto;
+    padding: 10px;
+    gap: 20px;
+}
+
+/* Card styling */
+.dashboard-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    width: 200px;
+    height: 250px; /* Fixed height to make all cards consistent */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between elements inside the card */
+}
+
+/* Hover/Tap Effect */
+.dashboard-card:hover, .dashboard-card:active {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for headings inside cards */
+.dashboard-card h2 {
+    font-size: 1.25em;
+    color: #007bff;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+/* Styling for the displayed values inside cards */
+.display-4 {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Circular Progress Bar Styling */
+.circular-progress {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(#007bff 0deg, #007bff var(--progress, 0deg), #ddd var(--progress, 0deg));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    transition: background 0.4s ease-in-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.circular-progress::before {
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 120px;
+    background-color: #fff;
+    border-radius: 50%;
+}
+
+.circular-progress span {
+    position: relative;
+    font-size: 1.5rem;
+    color: #007bff;
+    font-weight: bold;
+}
+
+/* Status Message Styling */
+.status-message {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 20px;
+    display: none; /* Hidden by default */
+}
+
+.status-message.happy {
+    color: #28a745; /* Green for success */
+}
+
+.status-message.sad {
+    color: #dc3545; /* Red for exceeded time */
+}

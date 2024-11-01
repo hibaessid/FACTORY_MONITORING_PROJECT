@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Factory Monitoring Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>Factory Monitoring Dashboard</h1>
+
+    <!-- Main Container for Dashboard (Horizontal Layout) -->
+    <div class="container">
+        <!-- Part Count Card -->
+        <div class="dashboard-card">
+            <h2>Part Count</h2>
+            <p id="part-count" class="display-4">Loading...</p>
+        </div>
+        
+        <!-- Preparation Time Card -->
+        <div class="dashboard-card">
+            <h2>Preparation Time</h2>
+            <p id="preparation-time" class="display-4">Loading...</p>
+        </div>
+        
+        <!-- Progress Card with Circular Gauge -->
+        <div class="dashboard-card">
+            <h2>Progress</h2>
+            <div class="circular-progress">
+                <span id="progress">Loading...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Status Message -->
+    <div id="status-message" class="status-message">
+        <p id="message" class="lead"></p>
+    </div>
+
+    <!-- Load JavaScript -->
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
